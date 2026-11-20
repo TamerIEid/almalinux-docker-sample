@@ -1,0 +1,11 @@
+[Unit]
+Description=Sample warehouse stock service
+After=network.target
+
+[Service]
+DynamicUser=yes
+ExecStart=/usr/bin/python3 -u /opt/inventory/inventory.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
